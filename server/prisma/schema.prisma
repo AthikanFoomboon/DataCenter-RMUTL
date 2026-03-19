@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  password     String
+  role         String   @default("user")
+  profileImage String?  @db.Text
+  fullNameTh   String?  @db.VarChar(200)
+  fullNameEn   String?  @db.VarChar(200)
+  prefixTh     String?  @db.VarChar(50)
+  prefixEn     String?  @db.VarChar(50)
+  province     String?  @db.VarChar(100)
+  area         String?  @db.VarChar(100)
+  email        String?
+  phone        String?
+  address      String?  @db.Text
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
