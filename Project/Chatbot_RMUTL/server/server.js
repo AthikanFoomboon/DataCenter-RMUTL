@@ -28,7 +28,7 @@ fs.readdirSync(routersDir)
     }
   });
 
-const PORT = process.env.PORT || 5173;
+const PORT = process.env.PORT 
 
 app.listen(PORT, () => {
   console.log(`Server running PORT ${PORT}`);

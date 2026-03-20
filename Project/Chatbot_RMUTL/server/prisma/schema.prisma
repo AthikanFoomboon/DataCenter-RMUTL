@@ -24,16 +24,4 @@ model User {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
-  loginHistories LoginHistory[]
-}
-
-model LoginHistory {
-  id        Int      @id @default(autoincrement())
-  userId    Int?
-  user      User?    @relation(fields: [userId], references: [id])
-  clientUrl String
-  userEmail String?
-  userName  String?
-  status    String   @default("success")
-  createdAt DateTime @default(now())
 }
